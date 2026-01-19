@@ -18,16 +18,16 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/template.html",
+      inject: "body",
     }),
   ],
   module: {
     rules: [
-
-        {
-      test: /\.m?js$/,
-      exclude: /node_modules/,
-      parser: { sourceType: "module" },
-        },
+      {
+        test: /\.m?js$/,
+        exclude: /node_modules/,
+        parser: { sourceType: "module" },
+      },
       {
         test: /\.css$/i,
         use: ["style-loader", "css-loader"],
