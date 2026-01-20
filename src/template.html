@@ -11,7 +11,7 @@
       <div class="sidebar">
         <div id="sidebar-header">
           <h1>Projects</h1>
-          <button>New Project</button>
+          <button id="newProjectBtn">New Project</button>
         </div>
 
         <div id="projects-list">
@@ -26,14 +26,18 @@
       </div>
       
       <div class="main">
+
         <div id="main-header">
           <h1>Your Todos</h1>
-          <button class="showTodoForm">Add Todo</button>
+          <button id="showTodoForm">Add Todo</button>
         </div>
 
-        <div>
+        <div id="todo-list">
+          
+        </div>
+
           <dialog id="todoDialog">
-            <form method="dialog"></form>
+            <form id="addTodoForm" method="dialog"></form>
             <label for="title">Title</label>
             <input type="text" id="title" name="title" required>
             <label for="description">description</label>
@@ -41,10 +45,8 @@
             <label for="dueDate">Due Date</label>
             <input type="date" id="date" name="date">
             <button type="submit">add</button>
-            <button value="cancel" id="cancelBtn"></button>
-
+            <button value="cancel" id="cancelBtn">cancel</button>
           </dialog>
-        </div>
         
       </div>
 

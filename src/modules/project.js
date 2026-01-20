@@ -1,13 +1,13 @@
 import Todo from "./todo.js"
 
 export default class Project {
-    constructor(name){
+    constructor(name, id){
         this.name = name;
-        this.todolist = [];
+        this.id = id;
     }
 
     addTodo(title, description, dueDate, priority) {
-        const newtodo = new Todo(title, description, dueDate, priority);
+        const newtodo = new Todo(title, crypto.randomUUID(), description, dueDate, priority);
         this.todolist.push(newtodo);
     }
 }
