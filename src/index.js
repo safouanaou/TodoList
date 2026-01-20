@@ -2,5 +2,3 @@ import Todo from "./modules/todo.js"//if its not a default export add the name o
 import "./style.css"
 import { showForm } from "./modules/eventHandlers.js"
 
-let projects = [];
-
