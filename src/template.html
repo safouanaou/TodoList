@@ -15,13 +15,10 @@
           <h1>TodoX</h1>
         </div>
 
-        <div id="projects-list">
+        <div id="projects-container">
           <button id="newProjectBtn">New Project</button>
-          <ul>
-          <li><span class="material-symbols-outlined">lists</span>Project</li>
-          <li><span class="material-symbols-outlined">lists</span>Project</li>
-          <li><span class="material-symbols-outlined">lists</span>Project</li>
-          <li><span class="material-symbols-outlined">lists</span>Project</li>
+          <ul id="projects-list">
+            <li data-index=${index}><span class="material-symbols-outlined">lists</span>General</li>
         </ul>
         </div>
         
@@ -46,6 +43,12 @@
               <input type="text" id="description" name="description">
               <label for="dueDate">Due Date</label>
               <input type="date" id="dueDate" name="dueDate">
+              <button id="menu-trigger" type="button">choose project</button>
+              <nav class="FormProjectMenu content-hidden">
+                <ul id="formProject">
+                  
+                </ul>
+              </nav>
               <button type="submit">add</button>
               <button value="cancel" id="cancelBtn">cancel</button>
             </form>

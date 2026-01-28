@@ -55,11 +55,11 @@
 
 }
 
-#projects-list span{
+#projects-container span{
     padding-right: 8px;
 }
 
-#projects-list li:hover {
+#projects-container li:hover {
     margin-bottom: 10px;
     font-size: 1rem;
     background-color: black;
@@ -67,7 +67,7 @@
 
 }
 
-#projects-list button{
+#projects-container button{
   width: 200px;
 padding: 12px 10px;
   background-color: white;
@@ -123,3 +123,6 @@ padding: 12px 10px;
 
 }
 
+.content-hidden {
+    display: none;
+}
