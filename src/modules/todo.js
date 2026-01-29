@@ -1,5 +1,5 @@
 export default class Todo {
-    constructor(title, description, dueDate, done = false, id, project){
+    constructor(title, description, dueDate, done = false, id, projectid){
         if (title === undefined){
             throw new Error("'title' is required")
         }
@@ -9,6 +9,6 @@ export default class Todo {
         this.dueDate = dueDate;
         this.done = done
         this.id = id;
-        this.project = project;
+        this.projectid = projectid;
     }
 }

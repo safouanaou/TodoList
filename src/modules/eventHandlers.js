@@ -4,8 +4,11 @@ import { showTodoForm, AddProject,
          getFormData, todoList,
          displayTodos, displayProjects, projectList,
          renderFormProject, menuTrigger,
-        projectMenu
+        projectMenu,
+        formProjectList
 } from "./displayController";
+
+export let currentProjectId = '';
 
 import { newTodo, newProject, done, todos, projects } from "./dataManager";
 
@@ -23,13 +26,20 @@ export const showForm = showTodoForm.addEventListener('click', ()=>{
     renderFormProject()
 })
 
+   formProjectList.addEventListener('click', (e)=>{
+        const index = e.target.dataset.index;
+        currentProjectId = projects[index].id
+    })
+
+
 export const openForm = addTodoForm.addEventListener('submit', (e)=>{
     
     const currentValue = getFormData();
-
+ 
     e.preventDefault();
 
-    newTodo(currentValue.title, currentValue.description, currentValue.dueDate);
+    console.log(typeof(currentProjectId));
+    newTodo(currentValue.title, currentValue.description, currentValue.dueDate, currentProjectId);
     displayTodos();
     console.log(todos)
 
@@ -55,6 +65,7 @@ AddProject.addEventListener('click', ()=>{
 projectList.addEventListener('click', (e)=>{
     //understand this line in depth
     const index = e.target.dataset.index;
+
     //linkn project id with todo project name
 })
 

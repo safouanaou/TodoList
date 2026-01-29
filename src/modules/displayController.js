@@ -56,9 +56,9 @@ export const displayProjects = ()=>{
 }
 
 export const renderFormProject = () => {
-    projects.forEach((proj)=>{
+    projects.forEach((proj, index)=>{
         formProjectList.innerHTML = `
-            <li>${proj.name}</li>
+            <li data-index=${index}>${proj.name}</li>
             <li>dkdkdk</li>
         `;
     })

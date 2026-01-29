@@ -116,13 +116,84 @@ padding: 12px 10px;
 
 
 #todoDialog {
-
+    height: 300px;
 }
 
 #addTodoForm {
-
+    position: relative;
 }
 
-.content-hidden {
-    display: none;
+.addTodoForm-anchor {
+    /* anchor the menu positioning inside the form so the absolute
+       menu can align to it. Kept scoped to avoid layout changes. */
+}
+
+.FormProjectMenu {
+    position: absolute;
+    left: 0;
+    top: calc(100% + 8px);
+    background: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    border-radius: 6px;
+    width: 220px;
+    z-index: 40;
+    overflow: hidden;
+    max-height: 320px; /* expanded height */
+    transition: max-height 220ms ease, opacity 180ms ease;
+    opacity: 1;
+}
+
+.FormProjectMenu ul {
+    list-style: none;
+    margin: 0;
+    padding: 8px 0;
+}
+
+.FormProjectMenu li {
+    padding: 8px 14px;
+    cursor: pointer;
+    color: #222;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.FormProjectMenu li:hover {
+    background: #f3f6f8;
+}
+
+.FormProjectMenu .empty {
+    color: #888;
+    padding: 10px 14px;
+}
+
+/* collapsed state used by the existing JS toggle */
+.FormProjectMenu.content-hidden {
+    max-height: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* menu trigger button */
+#menu-trigger{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    border: 1px solid #999;
+    background: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#menu-trigger::after{
+    content: '\25BC';
+    font-size: 0.7rem;
+    margin-left: 6px;
+    opacity: 0.8;
+}
+
+#menu-trigger:focus{
+    outline: 2px solid #cfe8ff;
 }

@@ -4,8 +4,8 @@ import Project from "./project";
 export const projects = [];
 export const todos = [];
 
-export const newTodo = (title, description, dueDate, id, project) => {
-        const newtodo = new Todo(title, description, dueDate, false, crypto.randomUUID(), project);
+export const newTodo = (title, description, dueDate, projectid = '') => {
+        const newtodo = new Todo(title, description, dueDate, false, crypto.randomUUID(), projectid);
         todos.push(newtodo);
     }
 
@@ -18,3 +18,5 @@ export const newProject = (name) => {
 export const done = (index) => {
     todos.splice(index, 1);
 }
+
+
